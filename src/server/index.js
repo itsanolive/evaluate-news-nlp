@@ -10,6 +10,10 @@ const mockAPIResponse = require('./mockAPI.js')
 
 const app = express()
 const router = express.Router()
+const bodyParser = require('body-parser');
+
+app.use(require('body-parser').urlencoded({ extended: false }));
+app.use(router);
 
 // app.use(express.static('dist'))
 app.use(express.static(__dirname + '/client'))
@@ -30,7 +34,8 @@ app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
 
-router.post ('/nlp', function (req, res) {
+app.route('/nlp')
+    .post( function (req, res, next) {
         var url = 'http://api.meaningcloud.com/sentiment-2.1?key=';
         var body = '&txt=' + req.body;
         console.log(body);
