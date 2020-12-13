@@ -35,7 +35,7 @@ app.get('/test', function (req, res) {
 })
 
 app.route('/nlp')
-    .post( function (req, res, next) {
+    .post((req, res, next) => {
         var url = 'http://api.meaningcloud.com/sentiment-2.1?key=';
         var body = '&txt=' + req.body;
         console.log(body);

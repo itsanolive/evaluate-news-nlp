@@ -12,9 +12,9 @@ const langProcessor = async (url, data) => {
     // .then(res => res.json())
     .then(res => res.text())
     .then(text => console.log(text))
-    .then(function (res) {
-        document.getElementById('results').innerHTML = res.message
-    })
+    // .then(function (res) {
+    //     document.getElementById('results').innerHTML = res.message
+    // })
 }
 
 export { langProcessor }
