@@ -11,8 +11,8 @@ const mockAPIResponse = require('./mockAPI.js')
 const app = express()
 const router = express.Router()
 
-app.use(express.static('dist'))
-// app.use(express.static(__dirname + '/client'))
+// app.use(express.static('dist'))
+app.use(express.static(__dirname + '/client'))
 
 console.log(__dirname)
 

@@ -4,6 +4,11 @@ const HtmlWebPackPlugin = require("html-webpack-plugin")
 
 module.exports = {
     entry: './src/client/index.js',
+    output: {
+        libraryTarget: 'var',
+        library: 'Client',
+        path: path.resolve(__dirname, 'dist')
+    },
     mode: 'production',
     module: {
         rules: [
@@ -13,8 +18,8 @@ module.exports = {
                 loader: "babel-loader"
             },
             {
-                test: '/\.css$/i',
-                loader: ["style-loader", "css-loader"]
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
             }
         ]
     },
